@@ -1,19 +1,10 @@
-package org.fasttrackit.domain;
+package org.fasttrackit.transfer;
 
-public class Agenda {
+public class CreateAgendRequest {
 
-    private long id;
     private String firstName;
     private String lastName;
     private int phoneNumber;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -31,7 +22,7 @@ public class Agenda {
         this.lastName = lastName;
     }
 
-    public long getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -41,9 +32,8 @@ public class Agenda {
 
     @Override
     public String toString() {
-        return "Agenda{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
+        return "CreateAgendRequest{" +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 '}';

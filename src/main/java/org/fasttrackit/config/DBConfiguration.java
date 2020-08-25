@@ -15,7 +15,8 @@ public class DBConfiguration {
 
         if (connection == null) {
 
-            InputStream inputStream = DBConfiguration.class.getClassLoader().getResourceAsStream("application.properties");
+            InputStream inputStream = DBConfiguration.class.getClassLoader()
+                    .getResourceAsStream("application.properties");
 
             if (inputStream == null) {
                 throw new RuntimeException("Failed to read config file.");
