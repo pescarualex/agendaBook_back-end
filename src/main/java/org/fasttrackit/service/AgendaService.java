@@ -31,5 +31,4 @@ public class AgendaService {
         System.out.println("Deleting agenda " + id);
         agendaRepository.deleteAgenda(id);
     }
-
 }

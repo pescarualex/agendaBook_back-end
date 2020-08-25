@@ -14,7 +14,7 @@ public class App
 {
     public static void main( String[] args ) throws SQLException {
 
-        AgendaRepository agenda = new AgendaRepository();
+//        AgendaRepository agenda = new AgendaRepository();
 //
 //        CreateAgendRequest request = new CreateAgendRequest();
 //
