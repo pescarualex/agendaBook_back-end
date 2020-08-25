@@ -12,10 +12,10 @@ import java.sql.SQLException;
  */
 public class App 
 {
-    public static void main( String[] args ){
+    public static void main( String[] args ) throws SQLException {
 
         AgendaRepository agenda = new AgendaRepository();
-
+//
 //        CreateAgendRequest request = new CreateAgendRequest();
 //
 //        request.setFirstName("ALEX");
@@ -24,6 +24,9 @@ public class App
 //
 //        agenda.createAgenda(request);
 
+//        System.out.println(agenda.getAgenda());
+
+
 //        UpdateAdengaRepository update = new UpdateAdengaRepository();
 
 //        update.setFirstName("alex");
@@ -31,6 +34,8 @@ public class App
 //        update.setPhoneNumber(777);
 //
 //        agenda.updateAgenda(2, update);
+
+//        agenda.deleteAgenda(2);
 
 
 
