@@ -4,6 +4,7 @@ import org.fasttrackit.config.ObjectMapperConfiguration;
 import org.fasttrackit.domain.Agenda;
 import org.fasttrackit.service.AgendaService;
 import org.fasttrackit.transfer.CreateAgendRequest;
+import org.fasttrackit.transfer.UpdateAdengaRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,5 +45,30 @@ public class AgendaServlet extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idAsString = req.getParameter("id");
+        int id = Integer.parseInt(idAsString);
 
+        UpdateAdengaRepository update = ObjectMapperConfiguration.getObjectMapper()
+                .readValue(req.getReader(), UpdateAdengaRepository.class);
+
+        try {
+            agendaService.updateAgenda(id, update);
+        } catch (SQLException e) {
+            resp.sendError(500, e.getMessage());
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idAsString = req.getParameter("id");
+        int id = Integer.parseInt(idAsString);
+
+        try {
+            agendaService.deleteAgenda(id);
+        } catch (SQLException e) {
+            resp.sendError(500, e.getMessage());
+        }
+    }
 }
