@@ -20,5 +20,18 @@ public class AgendaRepository {
         }
     }
 
+    public void deleteAgenda(int id) throws SQLException {
+        String sql = "DELETE FROM agenda WHERE id = ?";
+
+        try (PreparedStatement preparedStatement = DBConfiguration.getConnection().prepareStatement(sql)) {
+            preparedStatement.setLong(1, id);
+
+            preparedStatement.executeUpdate();
+        }
+
+
+
+    }
+
 
 }

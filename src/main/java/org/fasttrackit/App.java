@@ -15,12 +15,16 @@ public class App
 
         AgendaRepository agenda = new AgendaRepository();
 
-        CreateAgendRequest request = new CreateAgendRequest();
+//        CreateAgendRequest request = new CreateAgendRequest();
+//
+//        request.setFirstName("ALEX");
+//        request.setLastName("ALEX");
+//        request.setPhoneNumber(771128331);
+//
+//        agenda.createAgenda(request);
 
-        request.setFirstName("ALEX");
-        request.setLastName("ALEX");
-        request.setPhoneNumber(771128331);
+        agenda.deleteAgenda(1);
 
-        agenda.createAgenda(request);
+
     }
 }
