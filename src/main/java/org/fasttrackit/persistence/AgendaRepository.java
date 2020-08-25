@@ -2,6 +2,7 @@ package org.fasttrackit.persistence;
 
 import org.fasttrackit.config.DBConfiguration;
 import org.fasttrackit.transfer.CreateAgendRequest;
+import org.fasttrackit.transfer.UpdateAdengaRepository;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,6 +19,22 @@ public class AgendaRepository {
 
             prepareStatement.executeUpdate();
         }
+    }
+
+
+    public void updateAgenda(int id, UpdateAdengaRepository request) throws SQLException {
+        String sql = "UPDATE agenda SET first_name = ?, last_name = ?, phone_number = ?  WHERE id = ?";
+
+        try (PreparedStatement preparedStatement = DBConfiguration.getConnection().prepareStatement(sql)) {
+            preparedStatement.setString(1, request.getFirstName());
+            preparedStatement.setString(2, request.getLastName());
+            preparedStatement.setInt(3, request.getPhoneNumber());
+            preparedStatement.setLong(4, id);
+
+            preparedStatement.executeUpdate();
+        }
+
+
     }
 
     public void deleteAgenda(int id) throws SQLException {

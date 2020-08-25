@@ -2,6 +2,7 @@ package org.fasttrackit;
 
 import org.fasttrackit.persistence.AgendaRepository;
 import org.fasttrackit.transfer.CreateAgendRequest;
+import org.fasttrackit.transfer.UpdateAdengaRepository;
 
 import java.sql.SQLException;
 
@@ -11,7 +12,7 @@ import java.sql.SQLException;
  */
 public class App 
 {
-    public static void main( String[] args ) throws SQLException {
+    public static void main( String[] args ){
 
         AgendaRepository agenda = new AgendaRepository();
 
@@ -23,7 +24,15 @@ public class App
 //
 //        agenda.createAgenda(request);
 
-        agenda.deleteAgenda(1);
+//        UpdateAdengaRepository update = new UpdateAdengaRepository();
+
+//        update.setFirstName("alex");
+//        update.setLastName("alex");
+//        update.setPhoneNumber(777);
+//
+//        agenda.updateAgenda(2, update);
+
+
 
 
     }
